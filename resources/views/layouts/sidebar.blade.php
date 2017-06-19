@@ -10,7 +10,7 @@
                         <span>Employees</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="{{ route('employee.create') }}">Add Employee</a></li>
                         <li><a href="glyphicon.html">glyphicon</a></li>
                         <li><a href="grids.html">Grids</a></li>
                     </ul>

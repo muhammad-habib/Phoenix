@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
+Route::prefix('dashboard')->group(function () {
+    Route::resource('employee', 'EmployeeController');
+});
+
