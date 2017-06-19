@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+    public $layout = 'layouts.admin';
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -27,7 +29,7 @@ class HomeController extends Controller
     {
 //        var_dump(Auth::user());
 
-        return view('home');
+        return view('dashboard.home');
 
     }
 }
