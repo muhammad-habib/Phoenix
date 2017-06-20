@@ -52,7 +52,34 @@
                                     </span>
                 @endif
             </div>
-
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Phone: </label>
+                <div class="col-sm-6">
+                    <input type="text"  name="name" value="{{ old('phone') }}" required  class="form-control">
+                </div>
+                @if ($errors->has('phone'))
+                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                @endif
+            </div>
+            <?php
+            $path = storage_path() . "/countries.json"; // ie: /var/www/laravel/app/storage/json/filename.json
+            $json = json_decode(file_get_contents($path), true);
+            ?>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Country: </label>
+                <div class="col-sm-6">
+                    <select class="form-control input-lg m-bot15">
+                        <?php
+                            foreach ($json as $country)
+                                {
+                                   echo "<option value=".$country['code'].">".$country['name']."</option>";
+                                }
+                        ?>
+                    </select>
+                </div>
+            </div>
         </form>
     </section>
 @endsection
